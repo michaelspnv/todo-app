@@ -15,7 +15,7 @@ export default function TodoList({ tasks }) {
   return (
     <Body>
       {tasks.length > 0 ?
-        tasks.map(task => <TodoItem key={task.number} number={task.number} title={task.title} />) :
+        tasks.map((task, index) => <TodoItem key={task.id} id={task.id} number={index + 1} title={task.title} />) :
         <EmptyList>
           Список пуст.
         </EmptyList>

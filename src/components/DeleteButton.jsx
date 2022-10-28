@@ -29,9 +29,9 @@ const Line = styled.div`
   }
 `
 
-export default function DeleteButton() {
+export default function DeleteButton({ deleteTask }) {
   return (
-    <Body>
+    <Body onClick={deleteTask}>
       <Line />
       <Line />
     </Body>

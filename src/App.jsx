@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
+import TasksContext from './context'
 import GlobalStyles from './globalStyles'
 import Wrapper from './components/Wrapper'
 import Title from './components/Title'
@@ -7,19 +8,17 @@ import AddButton from './components/AddButton'
 import TodoList from './components/TodoList'
 
 export default function App() {
-  const [tasks, setTasks] = useState([])
+  const [id, setId] = useState(0)
   const [inputVal, setInputVal] = useState('')
   const input = useRef('input')
+  const {tasks, setTasks} = useContext(TasksContext)
 
   const addTask = () => {
-    setTasks([...tasks, {number: tasks.length + 1, title: inputVal}])
+    setTasks([...tasks, {id, title: inputVal}])
+    setId(id + 1)
     setInputVal('')
     input.current.focus()
   }
-
-  // const deleteTask = (number) => {
-  //   setTasks([])
-  // }
 
   const handleInputVal = (e) => setInputVal(e.target.value)
 

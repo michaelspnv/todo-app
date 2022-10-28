@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import TasksContext from '../context'
 import styled from 'styled-components'
 import DeleteButton from './DeleteButton'
 
@@ -28,13 +29,19 @@ const ControlPanel = styled.div`
 
 const MoveButton = styled.span``
 
-export default function TodoItem({ number, title }) {
+export default function TodoItem({ id, number, title }) {
+  const {tasks, setTasks} = useContext(TasksContext)
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter(task => task.id !== id))
+  }
+
   return (
     <Body>
       <Number>{number}.</Number>
       <Title>{title}</Title>
       <ControlPanel>
-        <DeleteButton />
+        <DeleteButton deleteTask={() => deleteTask(id)} />
         <MoveButton>...</MoveButton>
       </ControlPanel>
     </Body>
