@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
 const Body = styled.div`
   display: flex;
@@ -10,9 +10,5 @@ const Body = styled.div`
 `
 
 export default function Wrapper({ children }) {
-  return (
-    <Body>
-      {children}
-    </Body>
-  )
+  return <Body>{children}</Body>
 }

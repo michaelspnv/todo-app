@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
 const Body = styled.input`
   width: 500px;
@@ -15,7 +15,12 @@ const Body = styled.input`
 export default function Input({ onChange, value, input }) {
   return (
     <React.Fragment>
-      <Body onChange={onChange} value={value} ref={input} placeholder='Какое-то важное дело...' />
+      <Body
+        onChange={onChange}
+        value={value}
+        ref={input}
+        placeholder="Какое-то важное дело..."
+      />
     </React.Fragment>
   )
 }

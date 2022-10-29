@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
   .page {
     font-family: "Segoe UI", sans-serif;
     text-align: center;
+    background-color: #121212;
   }
 `
 

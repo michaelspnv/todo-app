@@ -4,7 +4,11 @@ import App from "./App"
 import TasksContext from "./context"
 
 function Main() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks")
+
+    return savedTasks ? JSON.parse(savedTasks) : []
+  })
 
   return (
     <TasksContext.Provider
