@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useContext } from "react"
-import TasksContext from "./context"
+import TasksContext from "./contexts/TasksContext"
 import GlobalStyles from "./globalStyles"
 import Wrapper from "./components/Wrapper"
+import ThemeSwitcher from "./components/ThemeSwitcher"
 import Title from "./components/Title"
 import Input from "./components/Input"
 import AddButton from "./components/AddButton"
@@ -20,12 +21,12 @@ export default function App() {
   }, [tasks])
 
   const addTask = () => {
-    if (inputVal) {
-      setTasks([...tasks, { id, title: inputVal }])
+    const title = inputVal.trim()
+    if (title) {
+      setTasks([...tasks, { id, title }])
       setId(id + 1)
-      setInputVal("")
-      console.log(tasks)
     }
+    setInputVal("")
     input.current.focus()
   }
 
@@ -34,6 +35,7 @@ export default function App() {
   return (
     <Wrapper>
       <GlobalStyles />
+      <ThemeSwitcher />
       <Title />
       <Input onChange={handleInputVal} value={inputVal} input={input} />
       <AddButton onClick={addTask} />

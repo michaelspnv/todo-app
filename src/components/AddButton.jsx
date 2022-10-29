@@ -6,13 +6,15 @@ const Body = styled.button`
   height: 42px;
   font-size: 20px;
   margin-bottom: 40px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.9);
-  transition: all 0.05s;
+  background-color: var(--add-btn-bg-color);
+  transition: all 0.1s;
   cursor: pointer;
 
   &:hover {
-    background-color: #fff;
+    background-color: var(--add-btn-hov-bg-color);
+    border-color: var(--add-btn-hov-border-color);
   }
 `
 

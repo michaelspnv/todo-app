@@ -7,7 +7,6 @@ const Body = styled.div`
   height: 25px;
   background-color: #ff5349;
   margin-right: 15px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
 `

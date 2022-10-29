@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Body = styled.h1`
   font-size: 50px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--main);
 `
 
 export default function Title() {

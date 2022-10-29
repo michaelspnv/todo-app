@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import TasksContext from "../context"
+import TasksContext from "../contexts/TasksContext"
 import styled from "styled-components"
 import DeleteButton from "./DeleteButton"
 
@@ -9,10 +9,10 @@ const Body = styled.div`
   align-items: center;
   max-width: 100%;
   height: 70px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--main);
   padding: 0 20px;
   margin-bottom: 20px;
-  border: 1px solid #666;
+  border: 1px solid var(--todo-item-border-color);
   border-radius: 10px;
 `
 
