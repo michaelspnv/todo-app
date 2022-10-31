@@ -23,7 +23,7 @@ export default function App() {
   const addTask = () => {
     const title = inputVal.trim()
     if (title) {
-      setTasks([...tasks, { id, title }])
+      setTasks([...tasks, { id, title, isCompleted: false }])
       setId(id + 1)
     }
     setInputVal("")

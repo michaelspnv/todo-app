@@ -9,7 +9,7 @@ const Body = styled.div`
 const EmptyList = styled.p`
   font-size: 30px;
   margin: 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--main);
 `
 
 export default function TodoList({ tasks }) {
@@ -22,6 +22,7 @@ export default function TodoList({ tasks }) {
             id={task.id}
             number={index + 1}
             title={task.title}
+            isCompleted={task.isCompleted}
           />
         ))
       ) : (

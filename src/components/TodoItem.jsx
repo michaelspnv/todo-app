@@ -4,6 +4,7 @@ import styled from "styled-components"
 import DeleteButton from "./DeleteButton"
 
 const Body = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,26 +17,71 @@ const Body = styled.div`
   border-radius: 10px;
 `
 
+const StateGroup = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100px;
+`
+
 const Number = styled.p`
   font-size: 20px;
+  margin-right: 10px;
+`
+
+const Checkbox = styled.input`
+  width: 20px;
+  height: 20px;
 `
 
 const Title = styled.p`
-  font-size: 16px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
 `
 
-export default function TodoItem({ id, number, title }) {
+const CrossedOutTitle = styled.p`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  text-decoration: line-through;
+`
+
+export default function TodoItem({ id, number, title, isCompleted }) {
   const { tasks, setTasks } = useContext(TasksContext)
 
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id))
   }
 
+  const toggleCheckbox = (id) => [
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === id) {
+          task.isCompleted = !task.isCompleted
+        }
+        return task
+      })
+    ),
+  ]
+
   return (
     <Body>
-      <Number>{number}.</Number>
-      <Title>{title}</Title>
-      <DeleteButton deleteTask={() => deleteTask(id)} />
+      <StateGroup>
+        <Number>{number}.</Number>
+        <Checkbox
+          type="checkbox"
+          onChange={() => toggleCheckbox(id)}
+          checked={isCompleted}
+        />
+      </StateGroup>
+      {isCompleted ? (
+        <CrossedOutTitle>{title}</CrossedOutTitle>
+      ) : (
+        <Title>{title}</Title>
+      )}
+      <DeleteButton deleteTask={deleteTask} id={id} />
     </Body>
   )
 }
