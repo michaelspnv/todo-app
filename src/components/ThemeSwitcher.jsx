@@ -27,7 +27,7 @@ export default function ThemeSwitcher() {
 
   return (
     <Body>
-      <Label for="switcher">Dark Mode:&nbsp;</Label>
+      <Label htmlFor="switcher">Dark Mode:&nbsp;</Label>
       <Checkbox
         checked={theme === "dark"}
         type="checkbox"

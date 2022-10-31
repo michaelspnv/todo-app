@@ -14,7 +14,7 @@ const Body = styled.div`
 const Line = styled.div`
   position: absolute;
   top: 50%;
-  left: 55%;
+  left: 50%;
   width: 40%;
   height: 1px;
   background-color: #000;

@@ -24,12 +24,6 @@ const Title = styled.p`
   font-size: 16px;
 `
 
-const ControlPanel = styled.div`
-  display: flex;
-`
-
-const MoveButton = styled.span``
-
 export default function TodoItem({ id, number, title }) {
   const { tasks, setTasks } = useContext(TasksContext)
 
@@ -41,10 +35,7 @@ export default function TodoItem({ id, number, title }) {
     <Body>
       <Number>{number}.</Number>
       <Title>{title}</Title>
-      <ControlPanel>
-        <DeleteButton deleteTask={() => deleteTask(id)} />
-        <MoveButton>...</MoveButton>
-      </ControlPanel>
+      <DeleteButton deleteTask={() => deleteTask(id)} />
     </Body>
   )
 }
