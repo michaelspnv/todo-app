@@ -12,9 +12,18 @@ const Body = styled.div`
   height: 70px;
   color: var(--main);
   padding: 0 20px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   border: 1px solid var(--todo-item-border-color);
   border-radius: 10px;
+
+  @media (max-width: 767px) {
+    max-width: 80%;
+  }
+
+  @media (max-width: 400px) {
+    max-width: 70%;
+    height: 6 0px;
+  }
 `
 
 const StateGroup = styled.div`
@@ -26,11 +35,20 @@ const StateGroup = styled.div`
 const Number = styled.p`
   font-size: 20px;
   margin-right: 10px;
+
+  @media (max-width: 400px) {
+    font-size: 16px;
+  }
 `
 
 const Checkbox = styled.input`
   width: 20px;
   height: 20px;
+
+  @media (max-width: 400px) {
+    width: 16px;
+    height: 16px;
+  }
 `
 
 const Title = styled.p`
@@ -38,6 +56,10 @@ const Title = styled.p`
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;
+
+  @media (max-width: 400px) {
+    font-size: 16px;
+  }
 `
 
 const CrossedOutTitle = styled.p`
@@ -46,6 +68,10 @@ const CrossedOutTitle = styled.p`
   transform: translateX(-50%);
   font-size: 20px;
   text-decoration: line-through;
+
+  @media (max-width: 400px) {
+    font-size: 16px;
+  }
 `
 
 export default function TodoItem({ id, number, title, isCompleted }) {

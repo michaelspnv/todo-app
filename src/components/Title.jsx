@@ -4,6 +4,10 @@ import styled from "styled-components"
 const Body = styled.h1`
   font-size: 50px;
   color: var(--main);
+
+  @media (max-width: 400px) {
+    font-size: 30px;
+  }
 `
 
 export default function Title() {

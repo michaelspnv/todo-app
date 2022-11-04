@@ -9,6 +9,10 @@ const Body = styled.div`
   margin-right: 15px;
   border-radius: 5px;
   cursor: pointer;
+
+  @media (max-width: 400px) {
+    margin-right: 5px;
+  }
 `
 
 const Line = styled.div`

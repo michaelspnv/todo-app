@@ -16,6 +16,12 @@ const Body = styled.button`
     background-color: var(--add-btn-hov-bg-color);
     border-color: var(--add-btn-hov-border-color);
   }
+
+  @media (max-width: 400px) {
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+  }
 `
 
 export default function AddButton({ onClick }) {

@@ -10,6 +10,10 @@ const EmptyList = styled.p`
   font-size: 30px;
   margin: 0;
   color: var(--main);
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+  }
 `
 
 export default function TodoList({ tasks }) {

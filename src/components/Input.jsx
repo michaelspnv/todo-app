@@ -10,6 +10,15 @@ const Body = styled.input`
   outline: none;
   border: 1px solid #ccc;
   border-radius: 5px;
+
+  @media (max-width: 767px) {
+    max-width: 60%;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 14px;
+    padding: 5px;
+  }
 `
 
 export default function Input({ onChange, value, input }) {
